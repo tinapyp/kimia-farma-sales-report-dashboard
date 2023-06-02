@@ -27,7 +27,7 @@ Dataset yang disediakan terdiri dari tabel-tabel berikut:
   <summary>Klik untuk melihat ERD</summary>
 
 <p align="center">
-  <kbd> <img width="400" alt="eer" src="https://user-images.githubusercontent.com/115857221/222876914-a4f50aaf-d339-4d64-8c0b-d450440f2c7b.png"></kbd> <br>
+  <kbd> <img width="400" alt="erd" src="![Screenshot 2023-06-02 181840](https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/d8f8f1aa-16fa-4cfd-92bc-98c33538fc41)"></kbd> <br>
 </p>
 
 </details>
