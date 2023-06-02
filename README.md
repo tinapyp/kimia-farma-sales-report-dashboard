@@ -7,7 +7,7 @@ Dataset : [VIX Kimia Farma](https://www.rakamin.com/virtual-internship-experienc
 ---
 
 ## 📂 **Introduction**
-VIX Big Data Analytics Kimia Farma merupakan virtual internship experience yang difasilitasi oleh [Rakamin Academy](https://www.rakamin.com/virtual-internship-experience/kimiafarma-big-data-analytics-virtual-internship-program). Pada project ini saya berperan sebagai Data Analyst Intern yang diminta untuk menganalisis dan membuat laporan penjualan perusahaan menggunakan data-data yang telah disediakan. Dari project ini, saya juga banyak belajar tentang data data warehouse, dataleke, dan datamart. <br>
+VIX Big Data Analytics Kimia Farma adalah pengalaman magang virtual yang diselenggarakan oleh Rakamin Academy. Dalam kesempatan ini, saya berperan sebagai Big Data Analytics yang bertugas untuk menganalisis dan membuat laporan penjualan perusahaan dengan menggunakan data yang telah diberikan. Melalui proyek ini, saya juga memperoleh banyak pengetahuan tentang data warehouse, dataleke, dan datamart. <br>
 <br>
 
 **Objectives**
@@ -25,9 +25,8 @@ Dataset yang disediakan terdiri dari tabel-tabel berikut:
 
 <details>
   <summary>Klik untuk melihat ERD</summary>
-
 <p align="center">
-  <kbd> <img width="400" alt="erd" src="![erd](https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/1bd4cc9f-168d-401a-9147-fa0aefa312f3)"></kbd> <br>
+  <kbd> <img width="400" alt="erd" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/1bd4cc9f-168d-401a-9147-fa0aefa312f3"></kbd> <br>
 </p>
 
 </details>
@@ -38,42 +37,42 @@ Dataset yang disediakan terdiri dari tabel-tabel berikut:
 
 ## 📂 **Design Datamart**
 ### Tabel Base
-Tabel base adalah tabel yang berisi data asli atau data mentah yang dikumpulkan dari sumbernya dan berisi informasi yang dibutuhkan untuk menjawab pertanyaan atau menyeselasikan masalah tertentu. Tabel base dalam project ini dibuat dari gabungan tabel penjaulan, pelanggan, dan barang dengan primary key pada `invoice_id` . <br>
+Tabel base merupakan tabel yang berisi data asli atau mentah yang dikumpulkan langsung dari sumbernya. Tabel ini mengandung informasi yang diperlukan untuk menjawab pertanyaan atau memecahkan masalah tertentu. Dalam proyek ini, tabel base dibuat dengan menggabungkan data dari tabel penjualan, pelanggan, dan barang. Primary key yang digunakan adalah 'invoice_id'. <br>
 
 <details>
   <summary> Klik untuk melihat Query </summary>
     <br>
     
 ```sql
-CREATE TABLE base_table (
+CREATE TABLE base_tbl_penjualan (
 SELECT
-    j.id_invoice,
-    j.tanggal,
-    j.id_customer,
-    c.nama,
-    j.id_distributor,
-    j.id_cabang,
-    c.cabang_sales,
-    c.id_group,
-    c.group,
-    j.id_barang,
-    b.nama_barang,
-    j.brand_id,
-    b.kode_lini,
-    j.lini,
-    b.kemasan,
-    j.jumlah,
-    j.harga,
-    j.mata_uang
-FROM penjualan j
-	LEFT JOIN pelanggan c
-		ON c.id_customer = j.id_customer
-	LEFT JOIN barang b
-		ON b.kode_barang = j.id_barang
-ORDER BY j.tanggal
+    pnj.id_invoice,
+    pnj.tanggal,
+    pnj.id_customer,
+    cus.nama,
+    pnj.id_distributor,
+    pnj.id_cabang,
+    cus.cabang_sales,
+    cus.id_group,
+    cus.group,
+    pnj.id_barang,
+    brg.nama_barang,
+    pnj.brand_id,
+    brg.kode_lini,
+    pnj.lini,
+    brg.kemasan,
+    pnj.jumlah,
+    pnj.harga,
+    pnj.mata_uang
+FROM penjualan pnj
+	LEFT JOIN pelanggan cus
+		ON cus.id_customer = pnj.id_customer
+	LEFT JOIN barang brg
+		ON brg.kode_barang = pnj.id_barang
+ORDER BY pnj.tanggal
 );
 
-ALTER TABLE base_table ADD PRIMARY KEY(id_invoice);
+ALTER TABLE base_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 ```
     
 <br>
@@ -81,23 +80,24 @@ ALTER TABLE base_table ADD PRIMARY KEY(id_invoice);
 <br>
 
 <p align="center">
-    <kbd> <img width="1000" alt="sample table base" src="https://user-images.githubusercontent.com/115857221/222876639-20e1e208-1c5b-4279-8e18-ec937c56f526.png"> </kbd> <br>
+    <kbd> <img width="1000" alt="sample table base" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/014c6f7d-e734-4bd9-8d62-6c0ea3c6dc41"> </kbd> <br>
     Gambar 1 — Sampel Hasil Pembuatan Tabel Base 
 </p>
 <br>
 
 ### Tabel Aggregat
-Tabel agregat adalah tabel yang dibuat dengan mengumpulkan dan menghitung data dari tabel basis. Tabel aggregat ini berisi informasi yang lebih ringkas dan digunakan untuk menganalisis data lebih cepat dan efisien. Hasil tabel ini akan digunakan untuk sumber pembuatan dashboard laporan penjualan.
+Tabel aggregat adalah tabel yang dibentuk dengan mengumpulkan dan menghitung data dari tabel dasar. Tabel aggregat ini berisi informasi yang lebih terkompresi dan digunakan untuk menganalisis data dengan lebih cepat dan efisien. Hasil dari tabel ini akan digunakan sebagai sumber untuk membuat dashboard laporan penjualan..
 
 <details>
   <summary> Klik untuk melihat Query </summary>
     <br>
     
 ```sql
-CREATE TABLE agg_table (
+-- Membuat datamart aggregat table penjualan
+CREATE TABLE agg_tbl_penjualan(
 SELECT
     tanggal,
-    MONTHNAME(tanggal) AS bulan,        -- kolom nama bulan
+    MONTHNAME(tanggal) AS bulan,
     id_invoice,
     cabang_sales AS lokasi_cabang,
     nama AS pelanggan,
@@ -105,10 +105,13 @@ SELECT
     lini AS merek,
     jumlah AS jumlah_produk_terjual,
     harga AS harga_satuan,
-    (jumlah * harga) AS total_pendapatan  -- kolom baru total pendapatan
-FROM base_table
+    ROUND((jumlah * harga),3) AS total_pendapatan
+FROM base_tbl_penjualan
 ORDER BY 1, 4, 5, 6, 7, 8, 9, 10
 );
+
+-- Membuat id_invoice Menjadi Primary Key pada aggregat table
+ALTER TABLE agg_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 ```
     
 <br>
@@ -116,7 +119,7 @@ ORDER BY 1, 4, 5, 6, 7, 8, 9, 10
 <br>
 
 <p align="center">
-    <kbd> <img width="750" alt="sample aggregat" src="https://user-images.githubusercontent.com/115857221/222876809-62000814-75b6-4f82-b6b7-05d00e618315.png"> </kbd> <br>
+    <kbd> <img width="750" alt="sample aggregat" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/fc1ce9be-128c-4cf1-b8e6-4747fdcb0e50"> </kbd> <br>
     Gambar 2 — Sampel Hasil Pembuatan Tabel Aggregat
 </p>
 <br>
