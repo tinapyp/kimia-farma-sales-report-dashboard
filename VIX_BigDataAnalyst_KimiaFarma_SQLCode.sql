@@ -120,3 +120,6 @@ SELECT
 FROM base_tbl_penjualan
 ORDER BY 1, 4, 5, 6, 7, 8, 9, 10
 );
+
+-- Membuat id_invoice Menjadi Primary Key pada aggregat table
+ALTER TABLE agg_tbl_penjualan ADD PRIMARY KEY(id_invoice);
