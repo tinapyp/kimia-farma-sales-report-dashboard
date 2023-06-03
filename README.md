@@ -1,6 +1,6 @@
 # **Virtual Internship Experience: Big Data Analytics - Kimia Farma**
 Tool : MySQL Workbench - [Lihat script](https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/blob/main/VIX_BigDataAnalyst_KimiaFarma_SQLCode.sql) <br>
-Visualization : Looker Data Studio - [Lihat dashboard](https://lookerstudio.google.com/reporting/3c67b292-3be2-484d-bc29-27bd0b4015fd) <br>
+Visualization : Looker Data Studio - [Lihat dashboard](https://lookerstudio.google.com/u/0/reporting/f4d9925e-4658-4d37-bda0-772ba811ab40/page/fnySD) <br>
 Dataset : [VIX Kimia Farma](https://www.rakamin.com/virtual-internship-experience/kimiafarma-big-data-analytics-virtual-internship-program)
 <br>
 
@@ -128,10 +128,10 @@ ALTER TABLE agg_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 
 ## 📂 **Data Visualization**
 
-[Lihat pada halaman Looker Data Studio](https://lookerstudio.google.com/reporting/3c67b292-3be2-484d-bc29-27bd0b4015fd).
+[Lihat pada halaman Looker Data Studio](https://lookerstudio.google.com/u/0/reporting/f4d9925e-4658-4d37-bda0-772ba811ab40/page/fnySD).
 
 <p align="center">
-    <kbd> <img width="1000" alt="Kimia_Farma_page-0001" src="https://user-images.githubusercontent.com/115857221/222877035-53371a89-081d-4ec5-9e72-65b0176a96fd.jpg"> </kbd> <br>
+    <kbd> <img width="1000" alt="Kimia_Farma_page-0001" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/c3967697-3fa9-4b4c-a967-1f19367b11c8"> </kbd> <br>
     Gambar 3 — Sales Report Dashboard PT. Kimia Farma
 </p>
 <br>
