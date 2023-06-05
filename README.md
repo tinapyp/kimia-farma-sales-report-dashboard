@@ -82,7 +82,7 @@ ALTER TABLE base_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 <br>
 
 <p align="center">
-    <kbd> <img width="1000" alt="base sample" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/base%20table%20result.jpg"> </kbd> <br>
+    <kbd> <img width="1000" alt="base sample" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/base_table.png"> </kbd> <br>
     Gambar 1 — Sample Result of Creating the Base Table 
 </p>
 <br>
@@ -124,7 +124,7 @@ ALTER TABLE agg_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 <br>
 
 <p align="center">
-    <kbd> <img width="750" alt="agregat sample" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/agg%20table%20result.png"> </kbd> <br>
+    <kbd> <img width="750" alt="agregat sample" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/agg_table.png"> </kbd> <br>
     Gambar 2 — Sample Result of Creating the Aggregate Table
 </p>
 <br>
