@@ -28,7 +28,7 @@ The provided dataset consists of the following tables:
 <details>
   <summary>Click to view the ERD (Entity Relationship Diagram) </summary>
 <p align="center">
-  <kbd> <img width="400" alt="erd" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/1bd4cc9f-168d-401a-9147-fa0aefa312f3"></kbd> <br>
+  <kbd> <img width="400" alt="erd" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/erd.png"></kbd> <br>
 </p>
 
 </details>
@@ -82,7 +82,7 @@ ALTER TABLE base_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 <br>
 
 <p align="center">
-    <kbd> <img width="1000" alt="sample table base" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/014c6f7d-e734-4bd9-8d62-6c0ea3c6dc41"> </kbd> <br>
+    <kbd> <img width="1000" alt="base sample" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/base%20table%20result.jpg"> </kbd> <br>
     Gambar 1 — Sample Result of Creating the Base Table 
 </p>
 <br>
@@ -121,7 +121,7 @@ ALTER TABLE agg_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 <br>
 
 <p align="center">
-    <kbd> <img width="750" alt="sample aggregat" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/fc1ce9be-128c-4cf1-b8e6-4747fdcb0e50"> </kbd> <br>
+    <kbd> <img width="750" alt="agregat sample" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/agg%20table%20result.png"> </kbd> <br>
     Gambar 2 — Sample Result of Creating the Aggregate Table
 </p>
 <br>
