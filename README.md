@@ -133,7 +133,7 @@ ALTER TABLE agg_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 [Look on Looker Data Studio](https://lookerstudio.google.com/u/0/reporting/f4d9925e-4658-4d37-bda0-772ba811ab40/page/fnySD).
 
 <p align="center">
-    <kbd> <img width="1000" alt="Kimia_Farma_page-0001" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma_VIX/assets/127580188/c3967697-3fa9-4b4c-a967-1f19367b11c8"> </kbd> <br>
+    <kbd> <img width="1000" alt="Kimia_Farma_dashboard" src="https://github.com/fathinafif/BigDataAnalytics-KimiaFarma-VIX/blob/main/sales%20report%20dashboard.png"> </kbd> <br>
     Gambar 3 — Sales Report Dashboard PT. Kimia Farma
 </p>
 <br>
