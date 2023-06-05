@@ -107,9 +107,12 @@ SELECT
     lini AS merek,
     jumlah AS jumlah_produk_terjual,
     harga AS harga_satuan,
-    ROUND((jumlah * harga),3) AS total_pendapatan
-FROM base_tbl_penjualan
-ORDER BY 1, 4, 5, 6, 7, 8, 9, 10
+    ROUND((jumlah * harga),3) AS total_pendapatan,
+    ROUND(AVG(jumlah) OVER(PARTITION BY cabang_sales),2) AS avg_penjualan_produk_by_cabang
+FROM 
+	base_tbl_penjualan
+ORDER BY 
+	tanggal, lokasi_cabang, pelanggan, produk, merek, jumlah_produk_terjual, harga_satuan, total_pendapatan
 );
 
 -- Membuat id_invoice Menjadi Primary Key pada aggregat table
