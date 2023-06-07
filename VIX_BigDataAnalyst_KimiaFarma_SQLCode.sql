@@ -99,9 +99,9 @@ ORDER BY pnj.tanggal
 ALTER TABLE base_tbl_penjualan ADD PRIMARY KEY(id_invoice);
 
 /*
---------------------------
+-------------------------
 CREATING AGGREGAT TABLE
---------------------------
+-------------------------
 */
 
 -- Membuat datamart aggregat table penjualan
